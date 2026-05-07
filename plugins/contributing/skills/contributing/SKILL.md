@@ -1,10 +1,11 @@
+---
+name: contributing-protocol
+description: This file governs how design documents in this project are created, amended, and consumed by humans and AI agents. Read it before touching any file in docs/.
+---
+
 # Documentation Protocol
 
-This file governs how design documents in this directory are created,
-amended, and consumed by humans and AI agents. Read it before touching
-any file in docs/.
-
----
+Some projects will store their documents in docs/ other in experimental/.  The point is to apply this to the project workspaces documentation.
 
 ## The Core Rule
 
@@ -107,10 +108,11 @@ which is in `.gitignore`. They are never committed and never edited directly.
 ### Generating them
 
 ```bash
-make docs
+"${CLAUDE_SKILL_DIR}/scripts/generate-consolidated-docs.sh"
 ```
 
-This regenerates all consolidated views. Run it when:
+This regenerates all consolidated views. Pass a base-document name as the
+first argument to regenerate only one (e.g. `... VISION`). Run it when:
 - You want to review the current state of any document
 - You are starting a new AI agent session
 - An amendment has been committed and you need the updated view
@@ -136,7 +138,7 @@ The commit hash is the context version token. If the hash of docs/
 changes during an agent session, the agent's understanding is stale
 and it should regenerate before proceeding.
 
-### If make docs is unavailable
+### If the script is unavailable
 
 Generate the consolidated view manually by:
 1. Reading the base document
@@ -151,7 +153,7 @@ Generate the consolidated view manually by:
 ### At session start
 
 1. Run `git log --oneline docs/` to see the amendment chain
-2. Run `make docs` to regenerate consolidated views
+2. Run `"${CLAUDE_SKILL_DIR}/scripts/generate-consolidated-docs.sh"` to regenerate consolidated views
 3. Load consolidated views from `docs/.consolidated/` — not source files
 4. Note the commit hash in the consolidated view header as your
    context version token

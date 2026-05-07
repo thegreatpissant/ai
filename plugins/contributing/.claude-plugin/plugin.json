@@ -1,0 +1,5 @@
+{
+  "name": "contributing",
+  "description": "Documentation amendment protocol: base documents are immutable, amendments accumulate, consolidated views are generated on demand.",
+  "version": "0.1.0"
+}

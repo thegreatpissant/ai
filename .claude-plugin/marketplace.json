@@ -1,0 +1,13 @@
+{
+  "name": "ai-skills",
+  "owner": {
+    "name": "Jim Feister"
+  },
+  "plugins": [
+    {
+      "name": "contributing",
+      "source": "./plugins/contributing",
+      "description": "Documentation amendment protocol: base documents are immutable, amendments accumulate, consolidated views are generated on demand."
+    }
+  ]
+}
