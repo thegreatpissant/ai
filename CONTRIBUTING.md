@@ -197,6 +197,7 @@ automatically by the number of amendments or the passage of time.
 
 ## File Structure
 
+Example file structure:  
 ```
 docs/
   VISION.md                              ← base document, never edited
