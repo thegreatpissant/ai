@@ -1,0 +1,5 @@
+{
+  "name": "rtos_design_audit",
+  "description": "Audits embedded firmware and RTOS designs for multi-core bus contention, scheduling jitter, clock-step vulnerabilities, and buffer sizing limits.",
+  "version": "0.1.0"
+}
